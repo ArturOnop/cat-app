@@ -1,0 +1,114 @@
+@import "Switcher.css";
+
+.app {
+    display: flex;
+}
+
+.nav {
+    width: 50%;
+    position: sticky;
+    padding: 2% 7% 2% 7%;
+}
+
+.home {
+    width: 50%;
+    max-height: 100vh;
+    background: linear-gradient(#FBE0DC, #FBE0DC) no-repeat center;
+    background-size: 90% 90%;
+    border-radius: 18%;
+}
+
+.upperNav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navInfo {
+    margin-top: 85px;
+}
+
+.navTitle {
+    font-weight: 500;
+    font-size: 44px;
+    line-height: 58px;
+    color: #1D1D1D;
+}
+
+.navDescription {
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 29px;
+    color: #8C8C8C;
+}
+
+.navFooter {
+    margin-top: 60px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 29px;
+    color: #1D1D1D;
+}
+
+.navOptions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navOption {
+    cursor: pointer;
+}
+
+.navImage {
+    width: 138px;
+    height: 198px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.voteTableImg {
+    background: #B4B7FF;
+    border: 4px solid rgba(255, 255, 255, 0.6);
+}
+
+.petBreedsImg {
+    background: #97EAB9;
+    border: 4px solid rgba(255, 255, 255, 0.6);
+}
+
+.imagesSearchImg {
+    background: #FFD280;
+    border: 4px solid rgba(255, 255, 255, 0.6);
+}
+
+.navOptionButton {
+    padding: 10px;
+    margin-top: 10px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: 2px;
+    color: #FF868E;
+}
+
+.navOption:hover .navImage {
+    border: 4px solid #FFFFFF;
+}
+
+.navOption:hover .navOptionButton {
+    background: #FBE0DC;
+}
+
+.activeNavOption .navImage {
+    border: 4px solid #FBE0DC;
+}
+
+.activeNavOption .navOptionButton {
+    background: #FF868E;
+    color: #FFFFFF;
+}

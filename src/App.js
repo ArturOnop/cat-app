@@ -1,25 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import Nav from "./Nav";
+import {useState} from "react";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    const [component, setComponent] = useState();
+
+    return (
+        <div className="app">
+            <Nav setComponent={setComponent}/>
+            <img className="home" src="/images/girl-and-pet.png" alt="girl and pet"/>
+        </div>
+    );
 }
 
 export default App;
