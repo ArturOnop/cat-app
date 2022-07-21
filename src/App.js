@@ -1,5 +1,6 @@
 import Nav from "./Nav";
 import {useState} from "react";
+import Component from "./Component";
 
 function App() {
 
@@ -8,7 +9,7 @@ function App() {
     return (
         <div className="app">
             <Nav setComponent={setComponent}/>
-            <img className="home" src="/images/girl-and-pet.png" alt="girl and pet"/>
+            <Component component={component}/>
         </div>
     );
 }

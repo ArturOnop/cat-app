@@ -1,4 +1,12 @@
 const Nav = ({setComponent}) => {
+
+    const handleNavOption = (event) => {
+        let active = document.querySelector(".activeNavOption");
+        if (active) active.classList.remove("activeNavOption");
+        console.log(event.currentTarget);
+        event.currentTarget.classList.add("activeNavOption");
+    }
+
     return (
         <div className="nav">
             <div className="upperNav">
@@ -24,7 +32,10 @@ const Nav = ({setComponent}) => {
                 </div>
             </div>
             <div className="navOptions">
-                <div className="navOption">
+                <div className="navOption" onClick={(event) => {
+                    handleNavOption(event);
+                    return setComponent("Voting");
+                }}>
                     <div className="navImage voteTableImg">
                         <img src="/images/vote-table.png" alt="vote table"/>
                     </div>
@@ -32,7 +43,10 @@ const Nav = ({setComponent}) => {
                         Voting
                     </div>
                 </div>
-                <div className="navOption">
+                <div className="navOption" onClick={(event) => {
+                    handleNavOption(event);
+                    return setComponent("Breeds");
+                }}>
                     <div className="navImage petBreedsImg">
                         <img src="/images/pet-breeds.png" alt="pet breeds"/>
                     </div>
@@ -40,7 +54,10 @@ const Nav = ({setComponent}) => {
                         Breeds
                     </div>
                 </div>
-                <div className="navOption">
+                <div className="navOption" onClick={(event) => {
+                    handleNavOption(event);
+                    return setComponent("Gallery");
+                }}>
                     <div className="navImage imagesSearchImg">
                         <img src="/images/images-search.png" alt="images search"/>
                     </div>
