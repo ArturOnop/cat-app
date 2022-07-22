@@ -1,4 +1,4 @@
-.votingPage {
+.componentPage {
     margin-top: 10px;
     background: #FFFFFF;
     padding-left: 20px;
@@ -6,9 +6,10 @@
     border-radius: 20px;
     width: 660px;
     min-height: 500px;
+    margin-bottom: 20px;
 }
 
-.votingPageHead {
+.componentPageHead {
     display: flex;
 }
 

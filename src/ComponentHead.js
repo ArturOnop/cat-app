@@ -1,4 +1,11 @@
+import {useContext} from "react";
+import {ComponentContext} from "./App";
+import {handleRouting} from "./hadleActiveNav";
+
 const ComponentHead = () => {
+
+    const setComponent = useContext(ComponentContext);
+
     return (
         <div className="componentHead">
             <div className="searchBar">
@@ -8,7 +15,10 @@ const ComponentHead = () => {
                 </button>
             </div>
             <div className="likeFavDislike">
-                <button className="likePageButton">
+                <button className="likePageButton" onClick={(event) => {
+                    handleRouting(event);
+                    return setComponent("Likes");
+                }}>
                     <img src="/images/like-page-button.png" alt="like button"/>
                 </button>
                 <button className="favPageButton">

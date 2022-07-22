@@ -1,10 +1,10 @@
 import {useContext, useEffect, useState} from "react";
 import axios from "axios";
 import {ComponentContext} from "./App";
-import {handleRouting} from "./hadleRouting";
+import {handleRouting} from "./hadleActiveNav";
 import ActionLog from "./ActionLog";
 
-const Voting = ({config}) => {
+const Voting = ({config, subId}) => {
 
     const setComponent = useContext(ComponentContext);
 
@@ -27,7 +27,16 @@ const Voting = ({config}) => {
         setLoaded(true);
     }
 
-    const handleLike = () => {
+    const handleLike = async () => {
+        await axios.post("https://api.thecatapi.com/v1/votes", {
+            image_id: img.id,
+            sub_id: subId,
+            value: 1
+        }, {headers: config})
+            .then((res) => setImg(res.data[0]))
+            .catch((error) => {
+                setError(error);
+            });
         setLoaded(false);
         setFav(false);
         handleImage();
@@ -63,8 +72,8 @@ const Voting = ({config}) => {
     }
 
     return (
-        <div className="votingPage">
-            <div className="votingPageHead">
+        <div className="componentPage">
+            <div className="componentPageHead">
                 <button className="returnButton" onClick={(event) => {
                     handleRouting(event);
                     return setComponent(null);

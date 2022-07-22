@@ -1,5 +1,6 @@
 import Voting from "./Voting";
 import ComponentHead from "./ComponentHead";
+import Likes from "./Likes";
 
 const Component = ({component}) => {
 
@@ -8,15 +9,16 @@ const Component = ({component}) => {
         "Content-Type": "application/json",
         "x-api-key": key
     }
+    let subId = "1Nart-20"
 
     return (
         <div className="component">
+            <ComponentHead/>
             {component === "Voting" ?
-                (<>
-                    <ComponentHead/>
-                    <Voting config={config}/>
-                </>) :
-                <img className="home" src="/images/girl-and-pet.png" alt="girl and pet"/>}
+                (<Voting config={config} subId={subId}/>) :
+                component === "Likes" ?
+                    (<Likes config={config} subId={subId}/>) :
+                    <img className="home" src="/images/girl-and-pet.png" alt="girl and pet"/>}
         </div>
     )
 }

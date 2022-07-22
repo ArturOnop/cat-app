@@ -1,6 +1,6 @@
 import {useContext} from "react";
 import {ComponentContext} from "./App";
-import {handleRouting} from "./hadleRouting";
+import {handleRouting} from "./hadleActiveNav";
 
 const Nav = () => {
 
