@@ -1,18 +1,24 @@
-@import "Switcher.css";
-
 .app {
     display: flex;
+    justify-content: space-between;
 }
 
 .nav {
-    width: 50%;
+    width: 38%;
+    height: 700px;
+    top: 30px;
+    margin-top: 30px;
     position: sticky;
-    padding: 2% 7% 2% 7%;
+    margin-left: 7%;
+    margin-right: 5%;
+}
+
+.component {
+    width: 50%;
 }
 
 .home {
-    width: 50%;
-    max-height: 100vh;
+    width: 100%;
     background: linear-gradient(#FBE0DC, #FBE0DC) no-repeat center;
     background-size: 90% 90%;
     border-radius: 18%;
@@ -23,12 +29,16 @@
     justify-content: space-between;
 }
 
+.logo {
+    cursor: pointer;
+}
+
 .navInfo {
     margin-top: 85px;
 }
 
 .navTitle {
-    font-weight: 500;
+    font-weight: bold;
     font-size: 44px;
     line-height: 58px;
     color: #1D1D1D;
@@ -44,7 +54,7 @@
 
 .navFooter {
     margin-top: 60px;
-    font-weight: 500;
+    font-weight: bold;
     font-size: 20px;
     line-height: 29px;
     color: #1D1D1D;
@@ -54,6 +64,8 @@
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 20px
 }
 
 .navOption {
@@ -94,6 +106,7 @@
     text-align: center;
     letter-spacing: 2px;
     color: #FF868E;
+    text-transform: uppercase;
 }
 
 .navOption:hover .navImage {

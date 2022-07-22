@@ -1,3 +1,166 @@
 .votingPage {
-    width: 50%;
+    margin-top: 10px;
+    background: #FFFFFF;
+    padding-left: 20px;
+    padding-top: 20px;
+    border-radius: 20px;
+    width: 660px;
+    min-height: 500px;
+}
+
+.votingPageHead {
+    display: flex;
+}
+
+.pageName {
+    margin-left: 10px;
+    width: 146px;
+    height: 40px;
+    background: #FF868E;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    letter-spacing: 2px;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+}
+
+.returnButton {
+    width: 40px;
+    height: 40px;
+    background: #FBE0DC;
+    border-radius: 10px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.returnButton:hover {
+    background: #FF868E;
+}
+
+.returnButton img {
+    height: 20px;
+}
+
+.returnButton:hover img {
+    filter: brightness(1000%);
+}
+
+.votingMain {
+    margin-top: 20px;
+}
+
+.votingMain > img {
+    width: 640px;
+    height: 360px;
+    border-radius: 20px;
+    object-fit: fill;
+}
+
+.votingOptions {
+    display: flex;
+    justify-content: space-between;
+    width: 248px;
+    height: 80px;
+    margin-top: -45px;
+    margin-left: 190px;
+    background: #FFFFFF;
+    border-radius: 20px;
+    border: 4px solid #FFFFFF;
+    position: absolute;
+}
+
+.votingOptions button {
+    width: 80px;
+    height: 80px;
+    border: none;
+    cursor: pointer;
+}
+
+.votingLike {
+    background: #97EAB9;
+    border-radius: 20px 0 0 20px;
+}
+
+.votingFav {
+    background: #FF868E;
+}
+
+.votingDislike {
+    background: #FFD280;
+    border-radius: 0 20px 20px 0;
+}
+
+.votingLike:hover {
+    background: rgba(151, 234, 185, 0.3);
+}
+
+.votingFav:hover {
+    background: rgba(255, 134, 142, 0.3);
+}
+
+.votingDislike:hover {
+    background: rgba(255, 210, 128, 0.3);
+}
+
+.votingFav.liked img {
+    fill: #FFFFFF;
+}
+
+.votingLike:hover img, .votingFav:hover img, .votingDislike:hover img {
+    filter: invert(100%) opacity(30%);
+}
+
+.actionLogs {
+    padding-bottom: 20px;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.actionLog {
+    display: flex;
+    align-items: center;
+    width: 640px;
+    height: 60px;
+    background: #F8F8F7;
+    border-radius: 10px;
+}
+
+.logTime {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px;
+    width: 61px;
+    height: 30px;
+    background: #FFFFFF;
+    border-radius: 5px;
+}
+
+.logInfo {
+    margin-left: 5px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #8C8C8C;
+}
+
+.logImgId {
+    font-weight: bold;
+    color: #1D1D1D;
+}
+
+.logImg {
+    margin-right: 20px;
+    margin-left: auto;
 }

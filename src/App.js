@@ -1,6 +1,8 @@
 import Nav from "./Nav";
-import {useState} from "react";
+import {createContext, useState} from "react";
 import Component from "./Component";
+
+export const ComponentContext = createContext();
 
 function App() {
 
@@ -8,8 +10,10 @@ function App() {
 
     return (
         <div className="app">
-            <Nav setComponent={setComponent}/>
-            <Component component={component}/>
+            <ComponentContext.Provider value={setComponent}>
+                <Nav/>
+                <Component component={component}/>
+            </ComponentContext.Provider>
         </div>
     );
 }

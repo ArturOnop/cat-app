@@ -1,5 +1,9 @@
 @import "App.css";
+@import "ComponentHead.css";
 @import "Voting.css";
+@import "Switcher.css";
+@import "Loader.css";
+@import "Error.css";
 
 body {
     background: #F8F8F7;

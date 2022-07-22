@@ -1,16 +1,18 @@
-const Nav = ({setComponent}) => {
+import {useContext} from "react";
+import {ComponentContext} from "./App";
+import {handleRouting} from "./hadleRouting";
 
-    const handleNavOption = (event) => {
-        let active = document.querySelector(".activeNavOption");
-        if (active) active.classList.remove("activeNavOption");
-        console.log(event.currentTarget);
-        event.currentTarget.classList.add("activeNavOption");
-    }
+const Nav = () => {
+
+    const setComponent = useContext(ComponentContext);
 
     return (
         <div className="nav">
             <div className="upperNav">
-                <div className="logo">
+                <div className="logo" onClick={(event) => {
+                    handleRouting(event);
+                    return setComponent(null);
+                }}>
                     <img src="/images/logo.png" alt="logo"/>
                 </div>
                 <div className="theme">
@@ -33,7 +35,7 @@ const Nav = ({setComponent}) => {
             </div>
             <div className="navOptions">
                 <div className="navOption" onClick={(event) => {
-                    handleNavOption(event);
+                    handleRouting(event);
                     return setComponent("Voting");
                 }}>
                     <div className="navImage voteTableImg">
@@ -44,7 +46,7 @@ const Nav = ({setComponent}) => {
                     </div>
                 </div>
                 <div className="navOption" onClick={(event) => {
-                    handleNavOption(event);
+                    handleRouting(event);
                     return setComponent("Breeds");
                 }}>
                     <div className="navImage petBreedsImg">
@@ -55,7 +57,7 @@ const Nav = ({setComponent}) => {
                     </div>
                 </div>
                 <div className="navOption" onClick={(event) => {
-                    handleNavOption(event);
+                    handleRouting(event);
                     return setComponent("Gallery");
                 }}>
                     <div className="navImage imagesSearchImg">
