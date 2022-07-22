@@ -23,7 +23,6 @@ const LikesDislikes = ({config, subId, vote}) => {
         let objects = [];
         await axios.get(`https://api.thecatapi.com/v1/votes?${subId}`, {headers: config})
             .then((res) => {
-                console.log(vote);
                 objects = res.data.filter((item) => item.value === vote);
             })
             .catch((error) => {
@@ -32,13 +31,13 @@ const LikesDislikes = ({config, subId, vote}) => {
         await objects.forEach((object) => {
             axios.get(`https://api.thecatapi.com/v1/images/${object.image_id}?${subId}`, {headers: config})
                 .then((res) => {
-                    setImages(prevImages => [...prevImages, res.data])
+                    setImages(prevImages => [...prevImages, res.data]);
+                    setLoaded(true);
                 })
                 .catch((error) => {
                     setError(error);
                 });
         })
-        setLoaded(true);
     }
 
     const giveDiv = () => {

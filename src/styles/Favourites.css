@@ -1,0 +1,22 @@
+.favImage {
+    cursor: pointer;
+}
+
+img.unFav {
+    width: auto;
+    height: auto;
+    position: absolute;
+    margin-left: -120px;
+    margin-top: 10px;
+    border-radius: 10px;
+    opacity: 0;
+}
+
+.favImage:hover img {
+    filter: blur(2px) opacity(0.6);
+}
+
+.favImage:hover img.unFav {
+    filter: unset;
+    opacity: 1;
+}

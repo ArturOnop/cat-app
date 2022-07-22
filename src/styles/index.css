@@ -6,6 +6,7 @@
 @import "Error.css";
 @import "Grid.css";
 @import "NoItemsFound.css";
+@import "Favourites.css";
 
 body {
     background: #F8F8F7;

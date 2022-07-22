@@ -23,7 +23,7 @@ const ComponentHead = () => {
                 </button>
                 <button className="favPageButton" onClick={(event) => {
                     handleRouting(event);
-                    return setComponent("Fav");
+                    return setComponent("Favourites");
                 }}>
                     <img src="/images/fav-page-button.png" alt="fav button"/>
                 </button>

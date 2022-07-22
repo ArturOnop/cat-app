@@ -11,7 +11,7 @@ const Voting = ({config, subId}) => {
     const [img, setImg] = useState();
     const [error, setError] = useState();
     const [loaded, setLoaded] = useState(false);
-    const [fav, setFav] = useState(false);
+    const [fav, setFav] = useState(null);
     const [logs, setLogs] = useState([]);
 
     useEffect(() => {
@@ -37,19 +37,30 @@ const Voting = ({config, subId}) => {
                 setError(error);
             });
         setLoaded(false);
-        setFav(false);
+        setFav(null);
         handleImage();
         handleLog("Likes");
     }
 
-    const handleFav = (event) => {
+    const handleFav = async (event) => {
         if (!fav) {
             event.currentTarget.innerHTML = "<img src=\"/images/fav-button-filled.png\" alt=\"like\"/>";
-            setFav(true);
+            await axios.post("https://api.thecatapi.com/v1/favourites", {
+                image_id: img.id,
+                sub_id: subId,
+            }, {headers: config})
+                .then(res => setFav(res.data.id))
+                .catch((error) => {
+                    setError(error);
+                });
             handleLog("Favourites");
         } else {
             event.currentTarget.innerHTML = "<img src=\"/images/fav-button.png\" alt=\"liked\"/>";
-            setFav(false);
+            await axios.delete(`https://api.thecatapi.com/v1/favourites/${fav}`, {headers: config})
+                .catch((error) => {
+                    setError(error);
+                });
+            setFav(null);
             handleLog("NoFavourites");
         }
     }
@@ -64,7 +75,7 @@ const Voting = ({config, subId}) => {
                 setError(error);
             });
         setLoaded(false);
-        setFav(false);
+        setFav(null);
         handleImage();
         handleLog("Dislikes");
     }

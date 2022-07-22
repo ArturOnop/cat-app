@@ -1,6 +1,7 @@
 import Voting from "./Voting";
 import ComponentHead from "./ComponentHead";
 import LikesDislikes from "./LikesDislikes";
+import Favourites from "./Favourites";
 
 const Component = ({component}) => {
 
@@ -28,7 +29,12 @@ const Component = ({component}) => {
                             <ComponentHead/>
                             <LikesDislikes config={config} subId={subId} vote={0}/>
                         </> :
-                        <img className="home" src="/images/girl-and-pet.png" alt="girl and pet"/>}
+                        component === "Favourites" ?
+                            <>
+                                <ComponentHead/>
+                                <Favourites config={config} subId={subId}/>
+                            </> :
+                            <img className="home" src="/images/girl-and-pet.png" alt="girl and pet"/>}
         </div>
     )
 }

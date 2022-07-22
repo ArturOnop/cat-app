@@ -15,8 +15,7 @@
 
 .pageName {
     margin-left: 10px;
-    width: 146px;
-    height: 40px;
+    padding: 5px 30px;
     background: #FF868E;
     border-radius: 10px;
     font-weight: 500;
