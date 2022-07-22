@@ -1,6 +1,6 @@
 import Voting from "./Voting";
 import ComponentHead from "./ComponentHead";
-import Likes from "./Likes";
+import LikesDislikes from "./LikesDislikes";
 
 const Component = ({component}) => {
 
@@ -13,12 +13,22 @@ const Component = ({component}) => {
 
     return (
         <div className="component">
-            <ComponentHead/>
             {component === "Voting" ?
-                (<Voting config={config} subId={subId}/>) :
+                <>
+                    <ComponentHead/>
+                    <Voting config={config} subId={subId}/>
+                </> :
                 component === "Likes" ?
-                    (<Likes config={config} subId={subId}/>) :
-                    <img className="home" src="/images/girl-and-pet.png" alt="girl and pet"/>}
+                    <>
+                        <ComponentHead/>
+                        <LikesDislikes config={config} subId={subId} vote={1}/>
+                    </> :
+                    component === "Dislikes" ?
+                        <>
+                            <ComponentHead/>
+                            <LikesDislikes config={config} subId={subId} vote={0}/>
+                        </> :
+                        <img className="home" src="/images/girl-and-pet.png" alt="girl and pet"/>}
         </div>
     )
 }

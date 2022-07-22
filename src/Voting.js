@@ -33,7 +33,6 @@ const Voting = ({config, subId}) => {
             sub_id: subId,
             value: 1
         }, {headers: config})
-            .then((res) => setImg(res.data[0]))
             .catch((error) => {
                 setError(error);
             });
@@ -55,7 +54,15 @@ const Voting = ({config, subId}) => {
         }
     }
 
-    const handleDislike = () => {
+    const handleDislike = async () => {
+        await axios.post("https://api.thecatapi.com/v1/votes", {
+            image_id: img.id,
+            sub_id: subId,
+            value: 0
+        }, {headers: config})
+            .catch((error) => {
+                setError(error);
+            });
         setLoaded(false);
         setFav(false);
         handleImage();
@@ -87,7 +94,7 @@ const Voting = ({config, subId}) => {
             {!loaded ? <div className="loader">Loading...</div> :
                 error ? <div className="error">{error}</div> :
                     (<>
-                        <div className="votingMain">
+                        <div className="contentMain">
                             <img src={img.url} alt="random cat"/>
                             <div className="votingOptions">
                                 <button className="votingLike" onClick={(event) => handleLike(event)}>

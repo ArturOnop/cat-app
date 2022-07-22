@@ -4,8 +4,8 @@
 @import "Switcher.css";
 @import "Loader.css";
 @import "Error.css";
-@import "Likes.css";
 @import "Grid.css";
+@import "NoItemsFound.css";
 
 body {
     background: #F8F8F7;

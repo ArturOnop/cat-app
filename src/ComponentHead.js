@@ -21,10 +21,16 @@ const ComponentHead = () => {
                 }}>
                     <img src="/images/like-page-button.png" alt="like button"/>
                 </button>
-                <button className="favPageButton">
+                <button className="favPageButton" onClick={(event) => {
+                    handleRouting(event);
+                    return setComponent("Fav");
+                }}>
                     <img src="/images/fav-page-button.png" alt="fav button"/>
                 </button>
-                <button className="dislikePageButton">
+                <button className="dislikePageButton" onClick={(event) => {
+                    handleRouting(event);
+                    return setComponent("Dislikes");
+                }}>
                     <img src="/images/dislike-page-button.png" alt="dislike button"/>
                 </button>
             </div>

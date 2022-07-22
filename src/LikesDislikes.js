@@ -3,25 +3,28 @@ import axios from "axios";
 import {handleRouting} from "./hadleActiveNav";
 import {ComponentContext} from "./App";
 
-const Likes = ({config, subId}) => {
+const LikesDislikes = ({config, subId, vote}) => {
 
     const setComponent = useContext(ComponentContext);
     let div = 1;
 
-    const [images, setImages] = useState([]);
+    const [images, setImages] = useState();
     const [error, setError] = useState();
-    const [loaded, setLoaded] = useState(false);
+    const [loaded, setLoaded] = useState();
 
     useEffect(() => {
+        setImages([]);
+        setLoaded(false);
         getImages();
-    }, []);
+    }, [vote]);
 
 
     const getImages = async () => {
         let objects = [];
         await axios.get(`https://api.thecatapi.com/v1/votes?${subId}`, {headers: config})
             .then((res) => {
-                objects = res.data.filter((item) => item.value === 1);
+                console.log(vote);
+                objects = res.data.filter((item) => item.value === vote);
             })
             .catch((error) => {
                 setError(error);
@@ -55,18 +58,18 @@ const Likes = ({config, subId}) => {
                     <img src="/images/return-button.png" alt="return button"/>
                 </button>
                 <div className="pageName">
-                    Likes
+                    {vote ? "Likes" : "Dislikes"}
                 </div>
             </div>
             {!loaded ? <div className="loader">Loading...</div> :
                 error ? <div className="error">{error}</div> :
-                    (<div className="grid likedImages">
-                        {images ? images.map((image) => (
+                    (<div className="grid contentMain">
+                        {images[0] ? images.map((image) => (
                             <img className={giveDiv()} src={image.url} key={image.id} alt="cat"/>
-                        )) : <div>No images</div>}
+                        )) : <div className="noItemsFound">No items found</div>}
                     </div>)}
         </div>
     )
 }
 
-export default Likes;
+export default LikesDislikes;
