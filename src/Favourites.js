@@ -27,7 +27,7 @@ const Favourites = ({config, subId}) => {
             .catch((error) => {
                 setError(error);
             });
-        setImages(objects);
+        setImages(objects.slice(0, 20));
         setLoaded(true);
     }
 

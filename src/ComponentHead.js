@@ -2,15 +2,19 @@ import {useContext} from "react";
 import {ComponentContext} from "./App";
 import {handleRouting} from "./hadleActiveNav";
 
-const ComponentHead = () => {
+const ComponentHead = ({setSearch}) => {
 
     const setComponent = useContext(ComponentContext);
 
     return (
         <div className="componentHead">
             <div className="searchBar">
-                <input type="text" placeholder="Search for breeds by name"/>
-                <button>
+                <input className="searchInput" type="text" placeholder="Search for breeds by name"/>
+                <button onClick={(event) => {
+                    setSearch(document.querySelector(".searchInput").value);
+                    handleRouting(event);
+                    return setComponent("Search");
+                }}>
                     <img src="/images/search-button.png" alt="search button"/>
                 </button>
             </div>

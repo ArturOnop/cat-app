@@ -1,0 +1,47 @@
+.componentPageHeadFull {
+    display: flex;
+    flex-direction: column;
+}
+
+.searchInfo {
+    margin-top: 15px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 29px;
+    color: #8C8C8C;
+}
+
+.searchInfo span {
+    color: #1D1D1D;
+    font-weight: bold;
+}
+
+.searchImage {
+    cursor: default;
+}
+
+.breedName {
+    position: absolute;
+    width: 180px;
+    height: 40px;
+    margin-left: 10px;
+    margin-top: -55px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FF868E;
+    opacity: 0;
+}
+
+.searchImage:hover img {
+    filter: opacity(0.6);
+}
+
+.searchImage:hover .breedName {
+    filter: unset;
+    opacity: 1;
+}

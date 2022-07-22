@@ -2,6 +2,8 @@ import Voting from "./Voting";
 import ComponentHead from "./ComponentHead";
 import LikesDislikes from "./LikesDislikes";
 import Favourites from "./Favourites";
+import Search from "./Search";
+import {useState} from "react";
 
 const Component = ({component}) => {
 
@@ -12,29 +14,36 @@ const Component = ({component}) => {
     }
     let subId = "1Nart-20"
 
+    const [search, setSearch] = useState("");
+
     return (
         <div className="component">
             {component === "Voting" ?
                 <>
-                    <ComponentHead/>
+                    <ComponentHead setSearch={setSearch}/>
                     <Voting config={config} subId={subId}/>
                 </> :
                 component === "Likes" ?
                     <>
-                        <ComponentHead/>
+                        <ComponentHead setSearch={setSearch}/>
                         <LikesDislikes config={config} subId={subId} vote={1}/>
                     </> :
                     component === "Dislikes" ?
                         <>
-                            <ComponentHead/>
+                            <ComponentHead setSearch={setSearch}/>
                             <LikesDislikes config={config} subId={subId} vote={0}/>
                         </> :
                         component === "Favourites" ?
                             <>
-                                <ComponentHead/>
+                                <ComponentHead setSearch={setSearch}/>
                                 <Favourites config={config} subId={subId}/>
                             </> :
-                            <img className="home" src="/images/girl-and-pet.png" alt="girl and pet"/>}
+                            component === "Search" ?
+                                <>
+                                    <ComponentHead setSearch={setSearch}/>
+                                    <Search config={config} subId={subId} search={search}/>
+                                </> :
+                                <img className="home" src="/images/girl-and-pet.png" alt="girl and pet"/>}
         </div>
     )
 }

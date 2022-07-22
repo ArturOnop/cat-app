@@ -31,13 +31,13 @@ const LikesDislikes = ({config, subId, vote}) => {
         await objects.forEach((object) => {
             axios.get(`https://api.thecatapi.com/v1/images/${object.image_id}?${subId}`, {headers: config})
                 .then((res) => {
-                    setImages(prevImages => [...prevImages, res.data]);
-                    setLoaded(true);
+                    setImages(prevImages => [...prevImages, res.data].slice(0, 20));
                 })
                 .catch((error) => {
                     setError(error);
                 });
         })
+        setLoaded(true);
     }
 
     const giveDiv = () => {
