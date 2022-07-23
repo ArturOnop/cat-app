@@ -12,6 +12,7 @@
 @import "Gallery.css";
 @import "BreedInfo.css";
 @import "UploadModule.css";
+@import "DarkTheme.css";
 
 body {
     background: #F8F8F7;

@@ -11,7 +11,7 @@ function App() {
     return (
         <div className="app">
             <ComponentContext.Provider value={setComponent}>
-                <Nav/>
+                <Nav component={component}/>
                 <Component component={component}/>
             </ComponentContext.Provider>
         </div>

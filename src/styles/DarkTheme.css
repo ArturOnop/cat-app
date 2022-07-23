@@ -1,0 +1,38 @@
+body.dark,
+body.dark .logTime {
+    background: #1D1D1D;
+}
+
+body.dark .logTime,
+body.dark .logImgId,
+body.dark .breedInfoTemp span,
+body.dark .breedInfoOWL span {
+    color: #FFFFFF;
+}
+
+
+body.dark .navTitle,
+body.dark .navFooter {
+    color: #FFFFFF;
+}
+
+body.dark .navOptionButton,
+body.dark .searchBar,
+body.dark .searchInput,
+body.dark .likePageButton,
+body.dark .favPageButton,
+body.dark .dislikePageButton,
+body.dark .componentPage,
+body.dark .galleryFilters,
+body.dark .actionLog,
+body.dark .uploadModule,
+body.dark .uploadArea,
+body.dark .uploadExit,
+body.dark .noItemsFound {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+body.dark .breedInfoName {
+    background: #343434;
+    color: #FFFFFF;
+}

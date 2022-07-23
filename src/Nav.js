@@ -1,10 +1,27 @@
-import {useContext} from "react";
+import {useContext, useEffect, useState} from "react";
 import {ComponentContext} from "./App";
 import {handleRouting} from "./hadleActiveNav";
 
-const Nav = () => {
+const Nav = ({component}) => {
 
     const setComponent = useContext(ComponentContext);
+
+    const [dark, setDark] = useState(false);
+
+    useEffect(() => {
+        if (dark) changeToDark();
+        else changeToLight();
+    }, [component, dark])
+
+    const changeToDark = () => {
+        document.querySelector("body").classList.add("dark");
+    }
+
+    const changeToLight = () => {
+        document.querySelectorAll(".dark").forEach((element) => {
+            element.classList.remove("dark");
+        });
+    }
 
     return (
         <div className="nav">
@@ -17,7 +34,7 @@ const Nav = () => {
                 </div>
                 <div className="theme">
                     <label className="switch">
-                        <input type="checkbox"/>
+                        <input type="checkbox" onClick={() => setDark(prevState => !prevState)}/>
                         <span className="slider"/>
                     </label>
                 </div>
