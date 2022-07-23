@@ -1,9 +1,11 @@
 .app {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .nav {
+    min-width: 500px;
     width: 38%;
     height: 700px;
     top: 30px;
@@ -15,6 +17,20 @@
 
 .component {
     width: 50%;
+}
+
+@media screen and (max-width: 1350px) {
+    .app {
+        justify-content: center;
+    }
+
+    .nav {
+        position: relative;
+    }
+
+    .component {
+        width: unset;
+    }
 }
 
 .home {
