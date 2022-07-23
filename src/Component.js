@@ -5,6 +5,7 @@ import Favourites from "./Favourites";
 import Search from "./Search";
 import {useState} from "react";
 import Breeds from "./Breeds";
+import Gallery from "./Gallery";
 
 const Component = ({component}) => {
 
@@ -49,7 +50,12 @@ const Component = ({component}) => {
                                         <ComponentHead setSearch={setSearch}/>
                                         <Breeds config={config} subId={subId}/>
                                     </> :
-                                    <img className="home" src="/images/girl-and-pet.png" alt="girl and pet"/>}
+                                    component === "Gallery" ?
+                                        <>
+                                            <ComponentHead setSearch={setSearch}/>
+                                            <Gallery config={config} subId={subId}/>
+                                        </> :
+                                        <img className="home" src="/images/girl-and-pet.png" alt="girl and pet"/>}
         </div>
     )
 }

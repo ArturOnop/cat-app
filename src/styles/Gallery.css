@@ -1,0 +1,131 @@
+.uploadButton {
+    margin-right: 20px;
+    margin-left: auto;
+    width: 143px;
+    height: 40px;
+    background: #FBE0DC;
+    border-radius: 10px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    cursor: pointer;
+}
+
+.uploadButton:hover {
+    background: #FF868E;
+}
+
+.uploadButton:hover img, .uploadButton:hover div {
+    filter: brightness(1000%);
+}
+
+.uploadButton div {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: 2px;
+    color: #FF868E;
+}
+
+.galleryFilters {
+    margin-top: 20px;
+    width: 640px;
+    height: 156px;
+    background: #F8F8F7;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.galleryFilters > div {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.galleryFilters label {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 10px;
+    line-height: 18px;
+    color: #8C8C8C;
+    margin-left: 10px;
+}
+
+.galleryFilters select {
+    font-size: 16px;
+    line-height: 24px;
+    color: #1D1D1D;
+    background: #FFFFFF;
+    border-radius: 10px;
+    border: none;
+    height: 40px;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.selectOrderGallery select, .selectBreedGallery select, .selectTypeGallery select {
+    width: 290px;
+}
+
+.selectLimitGallery select {
+    width: 240px;
+}
+
+.reloadButton {
+    width: 40px;
+    height: 40px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    border: none;
+    margin-top: 15px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.galleryFilters select:hover {
+    outline: 2px solid #FBE0DC;
+}
+
+.galleryFilters select:focus {
+    outline: 2px solid #FF868E;
+}
+
+.reloadButton:hover {
+    background: #FF868E;
+}
+
+.reloadButton:hover img {
+    filter: brightness(1000%);
+}
+
+.galleryImage {
+    cursor: pointer;
+}
+
+img.fav {
+    width: auto;
+    height: auto;
+    position: absolute;
+    margin-left: -120px;
+    margin-top: 10px;
+    border-radius: 10px;
+    opacity: 0;
+}
+
+.galleryImage img.added {
+    outline: #FF868E 5px solid;
+}
+
+.galleryImage:hover img {
+    filter: blur(2px) opacity(0.6);
+}
+
+.galleryImage:hover img.fav {
+    filter: unset;
+    opacity: 1;
+}
