@@ -25,7 +25,7 @@ const Search = ({config, subId, search}) => {
                 breeds = res.data.filter((breed) => breed.reference_image_id !== undefined);
             })
             .catch((error) => {
-                setError(error);
+                setError(error.message);
             });
         await breeds.forEach((breed) => {
             axios.get(`https://api.thecatapi.com/v1/images/${breed.reference_image_id}`, {headers: config})
@@ -33,7 +33,7 @@ const Search = ({config, subId, search}) => {
                     setImages(prevImages => [...prevImages, res.data].slice(0, 20));
                 })
                 .catch((error) => {
-                    setError(error);
+                    setError(error.message);
                 });
         })
         setLoaded(true);

@@ -22,7 +22,7 @@ const Voting = ({config, subId}) => {
         await axios.get("https://api.thecatapi.com/v1/images/search", {headers: config})
             .then((res) => setImg(res.data[0]))
             .catch((error) => {
-                setError(error);
+                setError(error.message);
             });
         setLoaded(true);
     }
@@ -34,7 +34,7 @@ const Voting = ({config, subId}) => {
             value: 1
         }, {headers: config})
             .catch((error) => {
-                setError(error);
+                setError(error.message);
             });
         setLoaded(false);
         setFav(null);
@@ -51,14 +51,14 @@ const Voting = ({config, subId}) => {
             }, {headers: config})
                 .then(res => setFav(res.data.id))
                 .catch((error) => {
-                    setError(error);
+                    setError(error.message);
                 });
             handleLog("Favourites");
         } else {
             event.currentTarget.innerHTML = "<img src=\"/images/fav-button.png\" alt=\"liked\"/>";
             await axios.delete(`https://api.thecatapi.com/v1/favourites/${fav}`, {headers: config})
                 .catch((error) => {
-                    setError(error);
+                    setError(error.message);
                 });
             setFav(null);
             handleLog("NoFavourites");
@@ -72,7 +72,7 @@ const Voting = ({config, subId}) => {
             value: 0
         }, {headers: config})
             .catch((error) => {
-                setError(error);
+                setError(error.message);
             });
         setLoaded(false);
         setFav(null);

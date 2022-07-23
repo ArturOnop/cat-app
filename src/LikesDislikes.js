@@ -26,7 +26,7 @@ const LikesDislikes = ({config, subId, vote}) => {
                 objects = res.data.filter((item) => item.value === vote);
             })
             .catch((error) => {
-                setError(error);
+                setError(error.message);
             });
         await objects.forEach((object) => {
             axios.get(`https://api.thecatapi.com/v1/images/${object.image_id}?${subId}`, {headers: config})
@@ -34,7 +34,7 @@ const LikesDislikes = ({config, subId, vote}) => {
                     setImages(prevImages => [...prevImages, res.data].slice(0, 20));
                 })
                 .catch((error) => {
-                    setError(error);
+                    setError(error.message);
                 });
         })
         setLoaded(true);

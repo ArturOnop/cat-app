@@ -63,7 +63,7 @@
     width: 640px;
     height: 360px;
     border-radius: 20px;
-    object-fit: fill;
+    object-fit: cover;
 }
 
 .votingOptions {

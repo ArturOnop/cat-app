@@ -28,7 +28,7 @@ const Breeds = ({config, subId}) => {
                 setBreeds(res.data)
             })
             .catch((error) => {
-                setError(error);
+                setError(error.message);
             });
     }
 
@@ -52,7 +52,7 @@ const Breeds = ({config, subId}) => {
                 setImages(result.slice(0, selectedLimit));
             })
             .catch((error) => {
-                setError(error);
+                setError(error.message);
             });
         setLoaded(true);
     }

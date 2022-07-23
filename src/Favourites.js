@@ -25,7 +25,7 @@ const Favourites = ({config, subId}) => {
                 objects = res.data;
             })
             .catch((error) => {
-                setError(error);
+                setError(error.message);
             });
         setImages(objects.slice(0, 20));
         setLoaded(true);
@@ -41,7 +41,6 @@ const Favourites = ({config, subId}) => {
     }
 
     const handleRemoveFav = async (image) => {
-        console.log(image);
         await axios.delete(`https://api.thecatapi.com/v1/favourites/${image.id}`, {headers: config})
             .catch((error) => {
                 setError(error);
