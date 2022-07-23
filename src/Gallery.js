@@ -73,7 +73,7 @@ const Gallery = ({config, subId}) => {
                 <div className="pageName">
                     Gallery
                 </div>
-                <button className="uploadButton">
+                <button className="uploadButton" onClick={() => setComponent("UploadModule")}>
                     <img src="/images/upload-button.png" alt="upload"/>
                     <div>Upload</div>
                 </button>

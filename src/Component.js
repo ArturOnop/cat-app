@@ -7,6 +7,7 @@ import {useState} from "react";
 import Breeds from "./Breeds";
 import Gallery from "./Gallery";
 import BreedsInfo from "./BreedsInfo";
+import UploadModule from "./UploadModule";
 
 const Component = ({component}) => {
 
@@ -63,7 +64,12 @@ const Component = ({component}) => {
                                                 <ComponentHead setSearch={setSearch}/>
                                                 <BreedsInfo selectedBreedInfo={selectedBreedInfo}/>
                                             </> :
-                                            <img className="home" src="/images/girl-and-pet.png" alt="girl and pet"/>}
+                                            component === "UploadModule" ?
+                                                <>
+                                                    <UploadModule config={config} subId={subId}/>
+                                                </> :
+                                                <img className="home" src="/images/girl-and-pet.png"
+                                                     alt="girl and pet"/>}
         </div>
     )
 }
