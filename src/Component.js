@@ -4,6 +4,7 @@ import LikesDislikes from "./LikesDislikes";
 import Favourites from "./Favourites";
 import Search from "./Search";
 import {useState} from "react";
+import Breeds from "./Breeds";
 
 const Component = ({component}) => {
 
@@ -43,7 +44,12 @@ const Component = ({component}) => {
                                     <ComponentHead setSearch={setSearch}/>
                                     <Search config={config} subId={subId} search={search}/>
                                 </> :
-                                <img className="home" src="/images/girl-and-pet.png" alt="girl and pet"/>}
+                                component === "Breeds" ?
+                                    <>
+                                        <ComponentHead setSearch={setSearch}/>
+                                        <Breeds config={config} subId={subId}/>
+                                    </> :
+                                    <img className="home" src="/images/girl-and-pet.png" alt="girl and pet"/>}
         </div>
     )
 }

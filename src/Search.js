@@ -2,7 +2,6 @@ import {useContext, useEffect, useState} from "react";
 import {ComponentContext} from "./App";
 import axios from "axios";
 import {handleRouting} from "./hadleActiveNav";
-import ActionLog from "./ActionLog";
 
 const Search = ({config, subId, search}) => {
 
