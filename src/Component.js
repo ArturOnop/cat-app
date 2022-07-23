@@ -6,6 +6,7 @@ import Search from "./Search";
 import {useState} from "react";
 import Breeds from "./Breeds";
 import Gallery from "./Gallery";
+import BreedsInfo from "./BreedsInfo";
 
 const Component = ({component}) => {
 
@@ -16,6 +17,7 @@ const Component = ({component}) => {
     }
     let subId = "1Nart-20"
 
+    const [selectedBreedInfo, setSelectedBreedInfo] = useState();
     const [search, setSearch] = useState("");
 
     return (
@@ -48,14 +50,20 @@ const Component = ({component}) => {
                                 component === "Breeds" ?
                                     <>
                                         <ComponentHead setSearch={setSearch}/>
-                                        <Breeds config={config} subId={subId}/>
+                                        <Breeds config={config} subId={subId}
+                                                setSelectedBreedInfo={setSelectedBreedInfo}/>
                                     </> :
                                     component === "Gallery" ?
                                         <>
                                             <ComponentHead setSearch={setSearch}/>
                                             <Gallery config={config} subId={subId}/>
                                         </> :
-                                        <img className="home" src="/images/girl-and-pet.png" alt="girl and pet"/>}
+                                        component === "BreedsInfo" ?
+                                            <>
+                                                <ComponentHead setSearch={setSearch}/>
+                                                <BreedsInfo selectedBreedInfo={selectedBreedInfo}/>
+                                            </> :
+                                            <img className="home" src="/images/girl-and-pet.png" alt="girl and pet"/>}
         </div>
     )
 }

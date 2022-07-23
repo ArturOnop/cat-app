@@ -3,7 +3,7 @@ import {ComponentContext} from "./App";
 import axios from "axios";
 import {handleRouting} from "./hadleActiveNav";
 
-const Breeds = ({config, subId}) => {
+const Breeds = ({config, subId, setSelectedBreedInfo}) => {
     const setComponent = useContext(ComponentContext);
     let div = 1;
 
@@ -112,7 +112,11 @@ const Breeds = ({config, subId}) => {
                 error ? <div className="error">{error}</div> :
                     (<div className="grid contentMain">
                         {images ? images.map((image) => (
-                            <div className={giveDiv()}>
+                            <div className={giveDiv()} onClick={(event) => {
+                                handleRouting(event);
+                                setSelectedBreedInfo(image);
+                                return setComponent("BreedsInfo");
+                            }}>
                                 <img src={image.image.url} key={image.image.id} alt="cat"/>
                                 <div className="breedName">
                                     {image.name ? image.name : ""}
