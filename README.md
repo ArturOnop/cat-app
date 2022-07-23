@@ -1,20 +1,23 @@
-# Getting Started with Create React App
+# Cat app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Running the app.
 
-## Available Scripts
+Write this command in command prompt of project to install all needed libraries.
 
-In the project directory, you can run:
+`npm i`
 
-### `npm start`
+Then write this command to start the app.
 
-Runs the app in the development mode.\
+`npm start`
+
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The page will reload when you make changes.
 
-### `npm test`
+## About app
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+React was used for the app development, especially functional hooks.
+
+As for the project, all obligatory tasks was made + "Back button", Light/Dark theme switcher and a little of adaptivity.
+
+Unfortunately, project was made in a hurry (in 4 days), so other plus features wasn`t added.
