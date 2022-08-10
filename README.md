@@ -2,22 +2,24 @@
 
 ## Running the app.
 
-Write this command in command prompt of project to install all needed libraries.
+Write `npm i` in command prompt of project to install all needed libraries.
 
-`npm i`
-
-Then write this command to start the app.
-
-`npm start`
+Then write `npm start` to start the app.
 
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.
-
 ## About app
 
-React was used for the app development, especially functional hooks.
+Social network app with cat png/jpeg/gif pictures.
 
-As for the project, all obligatory tasks was made + "Back button", Light/Dark theme switcher and a little of adaptivity.
+App includes these feature:
+- Sharing pictures
+- Voting for pictures
+- Saving to favourite
+- Liking\disliking 
+- Searching for a breed
+- Detailed description page for every breed
 
-Unfortunately, project was made in a hurry (in 4 days), so other plus features wasn`t added.
+The app uses React for front-end (especially functional hooks) and for back-end TheCatApi is used.
+
+Light/Dark theme switcher and responsive design for all screen resolutions.
